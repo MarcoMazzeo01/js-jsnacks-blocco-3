@@ -53,3 +53,35 @@ js2_button.addEventListener("click", function () {
     }
 
 })
+
+
+// ! JSNACK 3
+let js3_button = document.getElementById("js3_button")
+let js3_display = document.getElementById("js3_display")
+let js3_sumDisplay = document.getElementById("js3_sum")
+let js3_sumDisplayString = js3_sumDisplay.innerHTML
+let sum = 0
+let numArray = []
+
+js3_button.addEventListener("click",function(){
+   
+    sum = 0;
+    numArray = []
+    js3_sumDisplay.innerHTML = js3_sumDisplayString
+    js3_display.innerHTML = ""
+   
+    while (sum < 50) {
+        let numToAdd = parseInt(prompt("Inserisci un numero:"))
+
+        if (!isNaN(numToAdd)) {
+            js3_display.innerHTML += `<li>${numToAdd}</li>`
+            numArray.push(numToAdd);
+            sum += numToAdd;
+
+        } else {
+            alert("Devi inserire un numero!")
+        }
+    }
+
+     js3_sumDisplay.innerHTML += sum
+})
