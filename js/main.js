@@ -34,17 +34,22 @@ let word2 = document.getElementById("word2")
 let js2_button = document.getElementById("js2_button")
 let js2_display = document.getElementById("js2_display")
 
-js2_button.addEventListener("click",function(){
+js2_button.addEventListener("click", function () {
 
     let w1 = word1.value
     let w2 = word2.value
 
-    if (w1.length == w2.length) {
-       js2_display.innerHTML = `${w1} e ${w2}`
-    } else if (w1.length > w2.length) {
-        js2_display.innerHTML = w1
+
+    if (w1 && w2) {
+        if (w1.length == w2.length) {
+            js2_display.innerHTML = `${w1} e ${w2}`
+        } else if (w1.length > w2.length) {
+            js2_display.innerHTML = w1
+        } else {
+            js2_display.innerHTML = w2
+        }
     } else {
-        js2_display.innerHTML = w2
+        alert("Devi inserire due parole!")
     }
 
 })
