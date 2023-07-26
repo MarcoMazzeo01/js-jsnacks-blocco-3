@@ -56,12 +56,18 @@ js2_button.addEventListener("click", function () {
 
 
 // ! JSNACK 3
-let js3_button = document.getElementById("js3_button")
-let js3_display = document.getElementById("js3_display")
-let js3_sumDisplay = document.getElementById("js3_sum")
-let js3_sumDisplayString = js3_sumDisplay.innerHTML
+const js3_button = document.getElementById("js3_button")
+const js3_display = document.getElementById("js3_display")
+
+const js3_sumDisplay = document.getElementById("js3_sum")
+const js3_sumDisplayString = js3_sumDisplay.innerHTML
+
+const js3_average = document.getElementById("js3_average")
+const js3_averageString = js3_average.innerHTML
+
 let sum = 0
 let numArray = []
+let average = 0
 
 js3_button.addEventListener("click",function(){
    
@@ -69,6 +75,7 @@ js3_button.addEventListener("click",function(){
     numArray = []
     js3_sumDisplay.innerHTML = js3_sumDisplayString
     js3_display.innerHTML = ""
+    js3_average.innerHTML = js3_averageString
    
     while (sum < 50) {
         let numToAdd = parseInt(prompt("Inserisci un numero:"))
@@ -84,4 +91,8 @@ js3_button.addEventListener("click",function(){
     }
 
      js3_sumDisplay.innerHTML += sum
+
+     average = (sum / numArray.length)
+     js3_average.innerHTML += average.toFixed(2)
+
 })
